@@ -275,7 +275,7 @@ class Arr
      * Get an item from an array using "dot" notation.
      *
      * @param  \ArrayAccess|array  $array
-     * @param  string|int  $key
+     * @param  string  $key
      * @param  mixed   $default
      * @return mixed
      */

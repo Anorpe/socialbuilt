@@ -10,6 +10,8 @@
  */
 namespace Carbon\Traits;
 
+use Carbon\CarbonInterface;
+
 trait Test
 {
     ///////////////////////////////////////////////////////////////////
@@ -19,7 +21,7 @@ trait Test
     /**
      * A test Carbon instance to be returned when now instances are created.
      *
-     * @var static
+     * @var static|CarbonInterface
      */
     protected static $testNow;
 
@@ -40,7 +42,7 @@ trait Test
      *
      * /!\ Use this method for unit tests only.
      *
-     * @param static|string|null $testNow real or mock Carbon instance
+     * @param CarbonInterface|string|null $testNow real or mock Carbon instance
      */
     public static function setTestNow($testNow = null)
     {
@@ -51,7 +53,7 @@ trait Test
      * Get the Carbon instance (real or mock) to be returned when a "now"
      * instance is created.
      *
-     * @return static the current instance used for testing
+     * @return static|CarbonInterface the current instance used for testing
      */
     public static function getTestNow()
     {

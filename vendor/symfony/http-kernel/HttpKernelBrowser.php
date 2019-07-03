@@ -11,9 +11,6 @@
 
 namespace Symfony\Component\HttpKernel;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-
 /**
  * Client simulates a browser and makes requests to an HttpKernel instance.
  *

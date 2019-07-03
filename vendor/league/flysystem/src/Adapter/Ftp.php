@@ -204,8 +204,7 @@ class Ftp extends AbstractFtpAdapter
      */
     protected function login()
     {
-        set_error_handler(function () {
-        });
+        set_error_handler(function () {});
         $isLoggedIn = ftp_login(
             $this->connection,
             $this->getUsername(),
@@ -512,9 +511,7 @@ class Ftp extends AbstractFtpAdapter
 
         foreach ($listing as $item) {
             $output[] = $item;
-            if ($item['type'] !== 'dir') {
-                continue;
-            }
+            if ($item['type'] !== 'dir') continue;
             $output = array_merge($output, $this->listDirectoryContentsRecursive($item['path']));
         }
 
@@ -525,7 +522,6 @@ class Ftp extends AbstractFtpAdapter
      * Check if the connection is open.
      *
      * @return bool
-     *
      * @throws ErrorException
      */
     public function isConnected()
@@ -566,7 +562,6 @@ class Ftp extends AbstractFtpAdapter
         if ($this->isPureFtpd) {
             $path = str_replace(' ', '\ ', $path);
         }
-
         return ftp_rawlist($connection, $options . ' ' . $path);
     }
 }

@@ -119,23 +119,6 @@ class TestResponse
     }
 
     /**
-     * Assert that the response has an unauthorized status code.
-     *
-     * @return $this
-     */
-    public function assertUnauthorized()
-    {
-        $actual = $this->getStatusCode();
-
-        PHPUnit::assertTrue(
-            401 === $actual,
-            'Response status code ['.$actual.'] is not an unauthorized status code.'
-        );
-
-        return $this;
-    }
-
-    /**
      * Assert that the response has the given status code.
      *
      * @param  int  $status
@@ -674,13 +657,9 @@ class TestResponse
             );
 
             if (! is_int($key)) {
-                foreach (Arr::wrap($jsonErrors[$key]) as $jsonErrorMessage) {
-                    if (Str::contains($jsonErrorMessage, $value)) {
-                        return $this;
-                    }
-                }
-
-                PHPUnit::fail(
+                PHPUnit::assertStringContainsString(
+                    $value,
+                    $jsonErrors[$key],
                     "Failed to find a validation error in the response for key and message: '$key' => '$value'".PHP_EOL.PHP_EOL.$errorMessage
                 );
             }
@@ -697,12 +676,6 @@ class TestResponse
      */
     public function assertJsonMissingValidationErrors($keys = null)
     {
-        if ($this->getContent() === '') {
-            PHPUnit::assertTrue(true);
-
-            return $this;
-        }
-
         $json = $this->json();
 
         if (! array_key_exists('errors', $json)) {
@@ -793,13 +766,13 @@ class TestResponse
         $this->ensureResponseHasView();
 
         if (is_null($value)) {
-            PHPUnit::assertArrayHasKey($key, $this->original->gatherData());
+            PHPUnit::assertArrayHasKey($key, $this->original->getData());
         } elseif ($value instanceof Closure) {
-            PHPUnit::assertTrue($value($this->original->gatherData()[$key]));
+            PHPUnit::assertTrue($value($this->original->getData()[$key]));
         } elseif ($value instanceof Model) {
-            PHPUnit::assertTrue($value->is($this->original->gatherData()[$key]));
+            PHPUnit::assertTrue($value->is($this->original->getData()[$key]));
         } else {
-            PHPUnit::assertEquals($value, $this->original->gatherData()[$key]);
+            PHPUnit::assertEquals($value, $this->original->getData()[$key]);
         }
 
         return $this;
@@ -834,7 +807,7 @@ class TestResponse
     {
         $this->ensureResponseHasView();
 
-        return $this->original->gatherData()[$key];
+        return $this->original->getData()[$key];
     }
 
     /**
@@ -847,7 +820,7 @@ class TestResponse
     {
         $this->ensureResponseHasView();
 
-        PHPUnit::assertArrayNotHasKey($key, $this->original->gatherData());
+        PHPUnit::assertArrayNotHasKey($key, $this->original->getData());
 
         return $this;
     }
@@ -884,8 +857,6 @@ class TestResponse
                 $this->session()->has($key),
                 "Session is missing expected key [{$key}]."
             );
-        } elseif ($value instanceof Closure) {
-            PHPUnit::assertTrue($value($this->session()->get($key)));
         } else {
             PHPUnit::assertEquals($value, $this->session()->get($key));
         }
@@ -1042,7 +1013,7 @@ class TestResponse
     /**
      * Dump the content from the response.
      *
-     * @return $this
+     * @return void
      */
     public function dump()
     {
@@ -1054,21 +1025,17 @@ class TestResponse
             $content = $json;
         }
 
-        dump($content);
-
-        return $this;
+        dd($content);
     }
 
     /**
      * Dump the headers from the response.
      *
-     * @return $this
+     * @return void
      */
     public function dumpHeaders()
     {
-        dump($this->headers->all());
-
-        return $this;
+        dd($this->headers->all());
     }
 
     /**

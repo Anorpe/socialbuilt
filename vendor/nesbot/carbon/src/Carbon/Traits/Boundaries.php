@@ -10,6 +10,7 @@
  */
 namespace Carbon\Traits;
 
+use Carbon\CarbonInterface;
 use InvalidArgumentException;
 
 /**
@@ -40,7 +41,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->startOfDay();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOfDay()
     {
@@ -55,7 +56,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->endOfDay();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOfDay()
     {
@@ -70,7 +71,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->startOfMonth();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOfMonth()
     {
@@ -85,7 +86,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->endOfMonth();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOfMonth()
     {
@@ -100,7 +101,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->startOfQuarter();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOfQuarter()
     {
@@ -117,7 +118,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->endOfQuarter();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOfQuarter()
     {
@@ -132,7 +133,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->startOfYear();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOfYear()
     {
@@ -147,7 +148,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->endOfYear();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOfYear()
     {
@@ -162,7 +163,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->startOfDecade();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOfDecade()
     {
@@ -179,7 +180,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->endOfDecade();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOfDecade()
     {
@@ -196,7 +197,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->startOfCentury();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOfCentury()
     {
@@ -213,7 +214,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->endOfCentury();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOfCentury()
     {
@@ -230,7 +231,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->startOfMillennium();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOfMillennium()
     {
@@ -247,7 +248,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->endOfMillennium();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOfMillennium()
     {
@@ -268,7 +269,7 @@ trait Boundaries
      *
      * @param int $weekStartsAt optional start allow you to specify the day of week to use to start the week
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOfWeek($weekStartsAt = null)
     {
@@ -292,7 +293,7 @@ trait Boundaries
      *
      * @param int $weekEndsAt optional start allow you to specify the day of week to use to end the week
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOfWeek($weekEndsAt = null)
     {
@@ -312,7 +313,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->startOfHour();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOfHour()
     {
@@ -327,7 +328,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->endOfHour();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOfHour()
     {
@@ -342,7 +343,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->startOfMinute();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOfMinute()
     {
@@ -357,7 +358,7 @@ trait Boundaries
      * echo Carbon::parse('2018-07-25 12:45:16')->endOfMinute();
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOfMinute()
     {
@@ -374,7 +375,7 @@ trait Boundaries
      *   ->format('H:i:s.u');
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOfSecond()
     {
@@ -391,7 +392,7 @@ trait Boundaries
      *   ->format('H:i:s.u');
      * ```
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOfSecond()
     {
@@ -411,7 +412,7 @@ trait Boundaries
      * @param string            $unit
      * @param array<int, mixed> $params
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function startOf($unit, ...$params)
     {
@@ -437,7 +438,7 @@ trait Boundaries
      * @param string            $unit
      * @param array<int, mixed> $params
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function endOf($unit, ...$params)
     {

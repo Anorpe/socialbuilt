@@ -804,7 +804,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
-     * Get the first item from the collection passing the given truth test.
+     * Get the first item from the collection.
      *
      * @param  callable|null  $callback
      * @param  mixed  $default

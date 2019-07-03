@@ -170,7 +170,7 @@ class RedisManager implements Factory
         $parsed = (new ConfigurationUrlParser)->parseConfiguration($config);
 
         return array_filter($parsed, function ($key) {
-            return ! in_array($key, ['driver', 'username'], true);
+            return ! in_array($key, ['driver', 'username']);
         }, ARRAY_FILTER_USE_KEY);
     }
 
@@ -202,17 +202,6 @@ class RedisManager implements Factory
     public function disableEvents()
     {
         $this->events = false;
-    }
-
-    /**
-     * Set the default driver.
-     *
-     * @param  string  $driver
-     * @return void
-     */
-    public function setDriver($driver)
-    {
-        $this->driver = $driver;
     }
 
     /**

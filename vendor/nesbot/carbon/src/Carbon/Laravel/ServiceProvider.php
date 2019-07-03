@@ -3,7 +3,6 @@
 namespace Carbon\Laravel;
 
 use Carbon\Carbon;
-use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Events\EventDispatcher;
 use Illuminate\Translation\Translator as IlluminateTranslator;
@@ -20,7 +19,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $service = $this;
         $events = $this->app['events'];
 
-        if ($this->isEventDispatcher($events)) {
+        if ($events instanceof EventDispatcher || $events instanceof Dispatcher) {
             $events->listen(class_exists('Illuminate\Foundation\Events\LocaleUpdated') ? 'Illuminate\Foundation\Events\LocaleUpdated' : 'locale.changed', function () use ($service) {
                 $service->updateLocale();
             });
@@ -40,12 +39,5 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function register()
     {
         // Needed for Laravel < 5.3 compatibility
-    }
-
-    protected function isEventDispatcher($instance)
-    {
-        return $instance instanceof EventDispatcher
-            || $instance instanceof Dispatcher
-            || $instance instanceof DispatcherContract;
     }
 }

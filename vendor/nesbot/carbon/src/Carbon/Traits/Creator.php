@@ -17,7 +17,6 @@ use Carbon\CarbonTimeZone;
 use Carbon\Exceptions\InvalidDateException;
 use Carbon\Translator;
 use DateTimeInterface;
-use Exception;
 use InvalidArgumentException;
 
 /**
@@ -90,7 +89,7 @@ trait Creator
      *
      * @param \DateTimeInterface $date
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function instance($date)
     {
@@ -119,7 +118,7 @@ trait Creator
      * @param string|null               $time
      * @param \DateTimeZone|string|null $tz
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function rawParse($time = null, $tz = null)
     {
@@ -127,15 +126,7 @@ trait Creator
             return static::instance($time);
         }
 
-        try {
-            return new static($time, $tz);
-        } catch (Exception $exception) {
-            try {
-                return static::now($tz)->change($time);
-            } catch (Exception $ignored) {
-                throw $exception;
-            }
-        }
+        return new static($time, $tz);
     }
 
     /**
@@ -148,7 +139,7 @@ trait Creator
      * @param string|null               $time
      * @param \DateTimeZone|string|null $tz
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function parse($time = null, $tz = null)
     {
@@ -172,7 +163,7 @@ trait Creator
      * @param string                    $locale
      * @param \DateTimeZone|string|null $tz
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function parseFromLocale($time, $locale, $tz = null)
     {
@@ -184,7 +175,7 @@ trait Creator
      *
      * @param \DateTimeZone|string|null $tz
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function now($tz = null)
     {
@@ -196,7 +187,7 @@ trait Creator
      *
      * @param \DateTimeZone|string|null $tz
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function today($tz = null)
     {
@@ -208,7 +199,7 @@ trait Creator
      *
      * @param \DateTimeZone|string|null $tz
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function tomorrow($tz = null)
     {
@@ -220,7 +211,7 @@ trait Creator
      *
      * @param \DateTimeZone|string|null $tz
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function yesterday($tz = null)
     {
@@ -230,7 +221,7 @@ trait Creator
     /**
      * Create a Carbon instance for the greatest supported date.
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function maxValue()
     {
@@ -246,7 +237,7 @@ trait Creator
     /**
      * Create a Carbon instance for the lowest supported date.
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function minValue()
     {
@@ -288,7 +279,7 @@ trait Creator
      *
      * @throws \InvalidArgumentException
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function create($year = 0, $month = 1, $day = 1, $hour = 0, $minute = 0, $second = 0, $tz = null)
     {
@@ -373,7 +364,7 @@ trait Creator
      *
      * @throws \Carbon\Exceptions\InvalidDateException|\InvalidArgumentException
      *
-     * @return static|false
+     * @return static|CarbonInterface|false
      */
     public static function createSafe($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $tz = null)
     {
@@ -414,7 +405,7 @@ trait Creator
      *
      * @throws \InvalidArgumentException
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function createFromDate($year = null, $month = null, $day = null, $tz = null)
     {
@@ -429,7 +420,7 @@ trait Creator
      * @param int|null                  $day
      * @param \DateTimeZone|string|null $tz
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function createMidnightDate($year = null, $month = null, $day = null, $tz = null)
     {
@@ -446,7 +437,7 @@ trait Creator
      *
      * @throws \InvalidArgumentException
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function createFromTime($hour = 0, $minute = 0, $second = 0, $tz = null)
     {
@@ -461,7 +452,7 @@ trait Creator
      *
      * @throws \InvalidArgumentException
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function createFromTimeString($time, $tz = null)
     {
@@ -510,7 +501,7 @@ trait Creator
      *
      * @throws InvalidArgumentException
      *
-     * @return static|false
+     * @return static|CarbonInterface|false
      */
     public static function rawCreateFromFormat($format, $time, $tz = null)
     {
@@ -575,7 +566,7 @@ trait Creator
      *
      * @throws InvalidArgumentException
      *
-     * @return static|false
+     * @return static|CarbonInterface|false
      */
     public static function createFromFormat($format, $time, $tz = null)
     {
@@ -603,7 +594,7 @@ trait Creator
      *
      * @throws InvalidArgumentException
      *
-     * @return static|false
+     * @return static|CarbonInterface|false
      */
     public static function createFromIsoFormat($format, $time, $tz = null, $locale = 'en', $translator = null)
     {
@@ -744,7 +735,7 @@ trait Creator
      *
      * @throws InvalidArgumentException
      *
-     * @return static|false
+     * @return static|CarbonInterface|false
      */
     public static function createFromLocaleFormat($format, $locale, $time, $tz = null)
     {
@@ -761,7 +752,7 @@ trait Creator
      *
      * @throws InvalidArgumentException
      *
-     * @return static|false
+     * @return static|CarbonInterface|false
      */
     public static function createFromLocaleIsoFormat($format, $locale, $time, $tz = null)
     {
@@ -778,7 +769,7 @@ trait Creator
      *
      * @param mixed $var
      *
-     * @return static|null
+     * @return static|CarbonInterface|null
      */
     public static function make($var)
     {

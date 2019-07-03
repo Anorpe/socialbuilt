@@ -56,14 +56,4 @@ trait CompilesComponents
     {
         return "<?php \$__env->startComponentFirst{$expression}; ?>";
     }
-
-    /**
-     * Compile the end-component-first statements into valid PHP.
-     *
-     * @return string
-     */
-    protected function compileEndComponentFirst()
-    {
-        return $this->compileEndComponent();
-    }
 }

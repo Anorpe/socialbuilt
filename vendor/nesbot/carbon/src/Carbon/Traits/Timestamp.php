@@ -10,6 +10,8 @@
  */
 namespace Carbon\Traits;
 
+use Carbon\CarbonInterface;
+
 /**
  * Trait Timestamp.
  */
@@ -21,7 +23,7 @@ trait Timestamp
      * @param int                       $timestamp
      * @param \DateTimeZone|string|null $tz
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function createFromTimestamp($timestamp, $tz = null)
     {
@@ -34,7 +36,7 @@ trait Timestamp
      * @param int                       $timestamp
      * @param \DateTimeZone|string|null $tz
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function createFromTimestampMs($timestamp, $tz = null)
     {
@@ -47,7 +49,7 @@ trait Timestamp
      *
      * @param int $timestamp
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public static function createFromTimestampUTC($timestamp)
     {
@@ -59,7 +61,7 @@ trait Timestamp
      *
      * @param int $value
      *
-     * @return static
+     * @return static|CarbonInterface
      */
     public function timestamp($value)
     {
