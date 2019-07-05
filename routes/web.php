@@ -21,7 +21,7 @@ Route::get('/admin', 'HabitanteController@principal');
 
 
 
-Route::get('/admin', 'HabitanteController@index');
+//Route::get('/admin', 'HabitanteController@index');
 
 
 Route::get('/admin/nuevo', 'HabitanteController@create');

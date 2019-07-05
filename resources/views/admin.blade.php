@@ -1,4 +1,6 @@
-@extends('layouts.app')
+
+
+@extends('header')
 
 
 @section('content')
@@ -13,7 +15,6 @@
         <a href="{{ route('login') }}">Registrar</a>
 
 
-            <a href="{{ route('admin/habitantes') }}">Listar Habitantes</a>
 
 
 </div>
