@@ -11,8 +11,8 @@ class HabitanteController extends Controller
     //
     public function principal(){
 
-
-        return view('admin');
+        $noticias = Noticia::all();
+        return view('admin',compact('noticias'));
 
 
     }
