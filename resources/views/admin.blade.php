@@ -32,36 +32,45 @@
             <ul class="nav-news-feed">
               <li><i class="icon ion-ios-paper"></i><div>Mi perfil</div></li>
             </ul><!--news-feed links ends-->
-            <div id="chat-block">
-              
-            </div><!--chat block ends-->
+           
           </div>
-    			<div class="col-md-7">
+    		<div class="col-md-7">
 
-            <!-- Post Content
+            <!-- imprimiendo las noticias
             ================================================= -->
+            @forelse ($noticias as $noticia)
             <div class="post-content">
-              <!----<img src="images/post-images/1.jpg" alt="post-image" class="img-responsive post-image" /> -->
               <div class="post-container">
                  <div class="post-detail">
-                    <div class="user-info">
-                      </div>
-                          @forelse ($noticias as $noticia)
-                            <h5>Noticia</h5>
+                            <h5>Noticia : {{$noticia->titulo}} </h5>
                               <div class="line-divider"></div>
                                  <div class="post-text">
                                      <p>
-                                            <td {{$noticia->titulo}}</td>
-                                            <td>{{$noticia -> descripcion}}</td>
+                                        <td>{{$noticia -> descripcion}}</td>
                                      </p>
                                  </div>
                           <div class="line-divider"></div>
-                          @empty
-                          <li>No hay Noticias</li>
-                          @endforelse
+                                           
                 </div>
               </div>
             </div>
+            @empty
+            <div class="post-content">
+                    <div class="post-container">
+                       <div class="post-detail">
+                                  <h5>No hay noticias </h5>
+                                    <div class="line-divider"></div>
+                                       <div class="post-text">
+                                           <p>
+                                             
+                                           </p>
+                                       </div>
+                                <div class="line-divider"></div>
+                                                 
+                      </div>
+                    </div>
+                  </div>
+            @endforelse
     		</div>
     	</div>
     </div>
