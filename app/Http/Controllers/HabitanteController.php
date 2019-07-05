@@ -49,17 +49,17 @@ class HabitanteController extends Controller
         $data = request()->validate([
             'telefono' => ['required','max:7','min:7'],
             'celular' => ['required','min:10','max:10'],
-            'contraseña' => 'required',
+            'contraseña' => ['required','min:5']
         ], [
-            'idpropiedad.required' => 'El campo idpropiedad es obligatorio',
-            'telefono.required' => 'El campo telefono es obligatorio',
-            'celular.required' => 'El campo celular es obligatorio',
-            'contraseña.required' => 'El campo contraseña es obligatorio',
+            'telefono.required' => 'Se deben llenar todos los campos',
+            'celular.required' => 'Se deben llenar todos los campos',
+            'contraseña.required' => 'Se deben llenar todos los campos',
+            'contraseña.min'=>'La contraseña debe tener mas de 5 caracteres',
             'idpropiedad.unique' => 'El campo idpropiedad debe ser único',
-            'celular.max' => 'El campo celular debe contener exactamente 10 numeros',
-            'celular.min' => 'El campo celular debe contener exactamente 10 numeros',
-            'telefono.max' => 'El campo celular debe contener exactamente 7 numeros',
-            'telefono.max' => 'El campo celular debe contener exactamente 7 numeros',
+            'celular.max' => 'El celular debe tener 10 numeros',
+            'celular.min' => 'El celular debe tener 10 numeros',
+            'telefono.max' => 'El campo telefono debe tener 7 numeros',
+            'telefono.max' => 'El campo telefono debe tener 7 numeros'
 
         ]);
 
@@ -90,17 +90,18 @@ class HabitanteController extends Controller
             'idpropiedad' => ['required','unique:habitantes,idpropiedad'],
             'telefono' => ['required','max:7','min:7'],
             'celular' => ['required','min:10','max:10'],
-            'contraseña' => 'required',
+            'contraseña' => ['required','min:5']
         ], [
-            'idpropiedad.required' => 'El campo idpropiedad es obligatorio',
-            'telefono.required' => 'El campo telefono es obligatorio',
-            'celular.required' => 'El campo celular es obligatorio',
-            'contraseña.required' => 'El campo contraseña es obligatorio',
+            'idpropiedad.required' => 'Se deben llenar todos los campos',
+            'telefono.required' => 'Se deben llenar todos los campos',
+            'celular.required' => 'Se deben llenar todos los campos',
+            'contraseña.required' => 'Se deben llenar todos los campos',
+            'contraseña.min'=>'La contraseña debe tener mas de 5 caracteres',
             'idpropiedad.unique' => 'El campo idpropiedad debe ser único',
-            'celular.max' => 'El campo celular debe contener exactamente 10 numeros',
-            'celular.min' => 'El campo celular debe contener exactamente 10 numeros',
-            'telefono.max' => 'El campo celular debe contener exactamente 7 numeros',
-            'telefono.max' => 'El campo celular debe contener exactamente 7 numeros',
+            'celular.max' => 'El celular debe tener 10 numeros',
+            'celular.min' => 'El celular debe tener 10 numeros',
+            'telefono.max' => 'El campo telefono debe tener 7 numeros',
+            'telefono.max' => 'El campo telefono debe tener 7 numeros'
 
         ]);
         //dd($data);

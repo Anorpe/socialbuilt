@@ -69,8 +69,10 @@
                         </li>
                     @endguest
                 </ul>
-                <a class = "nav-link" href="/admin/nuevo">Crear Habitante</a>
+                <a class = "nav-link" href="/admin/nuevo">Crear Perfil</a>
                 <a class = "nav-link" href="/admin/nuevanoticia">Crear Noticia</a>
+                <a class = "nav-link" href="/admin/nuevanoticia">Crear Notificación</a>
+                <a class = "nav-link" href="/admin/nuevanoticia">Consultar Notificaciones</a>
             </div>
         </div>
     </nav>
@@ -111,7 +113,7 @@
                                                     <td>{{$habitante->idpropiedad}}</td>
                                                     <td>{{$habitante -> telefono}}</td>
                                                     <td>{{$habitante -> celular}}</td>
-                                                    <td><a href="/admin/editar/{{$habitante->idpropiedad}}">editar</a></td>
+                                                    <td><a href="/admin/editar/{{$habitante->idpropiedad}}">modificar</a></td>
 
                                                 </tr>
                                                 <tr>

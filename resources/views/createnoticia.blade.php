@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Crear Habitante') }}</div>
+                    <div class="card-header">{{ __('Crear Noticia') }}</div>
 
                     <div class="card-body">
 
@@ -55,7 +55,7 @@
                             <br>
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Crear Noticia') }}
+                                    {{ __('Publicar') }}
                                 </button>
 
 
