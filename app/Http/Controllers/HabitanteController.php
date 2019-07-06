@@ -29,19 +29,13 @@ class HabitanteController extends Controller
     }
 
     public function show(){
-        $data = request()->validate(['idpropiedad' => ['required'],'state'=>'exists:state,idpropiedad'] , [
-            'idpropiedad.required' => 'Se deben llenar todos los campos']);
+        $data = request()->validate([
+            'idpropiedad' => ['required','exists:habitantes'],
+        ],[
+            'idpropiedad.required' => 'Se deben llenar todos los campos'
+            //'idpropiedad.exist'=>'“El ID propiedad no se encuentra en la base de datos”'
+        ]);
         $idpropiedad = $data['idpropiedad'];
-        $idpropiedad = $data['idpropiedad'];
-        if(Habitante::where('idpropiedad',$idpropiedad)->exists()){
-            return redirect ("admin/show/".$idpropiedad );
-        }
-        else{
-            return redirect("admin");
-
-        }
-        //$ruta="admin/show/;"
-        //dd($ruta + $idpropiedad);
         return redirect ("admin/show/".$idpropiedad );
     }
 
