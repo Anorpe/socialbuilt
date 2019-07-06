@@ -33,8 +33,10 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
               <li class="dropdown"><a href="/admin/nuevo">Crear Perfil</a></li>
-              <li class="dropdown"><a href="/admin">Crear Notificación</a></li>
-              <li class="dropdown"><a href="/admin/nuevanoticia">Crear Noticia</a></li>
+                <li class="dropdown"><a href="/admin/consultar">Consultar Perfil</a></li>
+                <li class="dropdown"><a href="/admin/nuevanoticia">Crear Noticia</a></li>
+
+                <li class="dropdown"><a href="/admin">Crear Notificación</a></li>
               <li class="dropdown"><a href="/admin">Consultar Notificaciones</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->

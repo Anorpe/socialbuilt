@@ -19,20 +19,28 @@ class HabitanteController extends Controller
 
 
 
-    public function index(){
+    public function query(){
         $habitantes = Habitante::all();
         $noticias = Noticia::all();
 
         $title = 'Listado de Habitantes';
 
-        return view('habitantes',compact('title','habitantes','noticias'));
+        return view('query',compact('title','habitantes','noticias'));
+    }
+
+    public function show(){
+        $data = request();
+        $idpropiedad = $data['idpropiedad'];
+        //$ruta="admin/show/;"
+        //dd($ruta + $idpropiedad);
+        return redirect ("admin/show/".$idpropiedad );
     }
 
 
-    public function show($id){
-        $user = Habitante::find($id);
+    public function mostrar($id){
+        $habitante = Habitante::find($id);
 
-        return view(user,compact('user'));
+        return view('show',compact('habitante'));
 
 
     }
@@ -49,11 +57,10 @@ class HabitanteController extends Controller
         $data = request()->validate([
             'telefono' => ['required','max:7','min:7'],
             'celular' => ['required','min:10','max:10'],
-            'contraseña' => ['required','min:5']
+            'contraseña' => ['min:5']
         ], [
             'telefono.required' => 'Se deben llenar todos los campos',
             'celular.required' => 'Se deben llenar todos los campos',
-            'contraseña.required' => 'Se deben llenar todos los campos',
             'contraseña.min'=>'La contraseña debe tener mas de 5 caracteres',
             'idpropiedad.unique' => 'El campo idpropiedad debe ser único',
             'celular.max' => 'El celular debe tener 10 numeros',
@@ -77,7 +84,7 @@ class HabitanteController extends Controller
 
 
 
-        return redirect('admin');
+        return redirect('admin/consultar');
     }
 
     public function create(){

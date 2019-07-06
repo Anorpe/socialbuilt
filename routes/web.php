@@ -27,14 +27,15 @@ Route::get('/admin', 'HabitanteController@principal');
 Route::get('/admin/nuevo', 'HabitanteController@create');
 Route::post('/admin/crear','HabitanteController@store');
 
-Route::get('/admin/nuevanoticia', 'HabitanteController@createnoticia');
-Route::post('/admin/crearnoticia','HabitanteController@storenoticia');
-
-
-
-
 Route::get('/admin/editar/{habitante}', 'HabitanteController@editar');
 Route::put('/admin/update/{habitante}','HabitanteController@update')->name('update');
+
+Route::get('/admin/consultar/','HabitanteController@query');
+Route::post('/admin/show','HabitanteController@show');
+Route::get('/admin/show/{habitante}','HabitanteController@mostrar');
+
+Route::get('/admin/nuevanoticia', 'HabitanteController@createnoticia');
+Route::post('/admin/crearnoticia','HabitanteController@storenoticia');
 
 
 //Route::get('/usuarios/{idpropiedad}','UserController@show');
