@@ -29,7 +29,8 @@ class HabitanteController extends Controller
     }
 
     public function show(){
-        $data = request();
+        $data = request()->validate(['idpropiedad' => ['required']] , [
+            'idpropiedad.required' => 'Se deben llenar todos los campos']);
         $idpropiedad = $data['idpropiedad'];
         //$ruta="admin/show/;"
         //dd($ruta + $idpropiedad);

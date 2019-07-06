@@ -84,6 +84,16 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card">
+                            <ul>
+                                @if ($errors->any())
+                                    <div class ="alert alert-danger">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </div>
+                                @endif
+
+                            </ul>
                             <form method="POST" action="{{url('admin/show')}}">
                                 @csrf
                                 <div class="form-group row">
