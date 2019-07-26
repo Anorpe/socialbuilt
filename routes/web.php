@@ -34,8 +34,11 @@ Route::get('/admin/consultar/','HabitanteController@query');
 Route::post('/admin/show','HabitanteController@show');
 Route::get('/admin/show/{habitante}','HabitanteController@mostrar');
 
-Route::get('/admin/nuevanoticia', 'HabitanteController@createnoticia');
-Route::post('/admin/crearnoticia','HabitanteController@storenoticia');
+
+
+
+Route::get('/admin/nuevanoticia', 'NoticiaController@create');
+Route::post('/admin/crearnoticia','NoticiaController@store');
 
 
 //Route::get('/usuarios/{idpropiedad}','UserController@show');

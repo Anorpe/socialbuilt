@@ -25,7 +25,7 @@ class HabitanteController extends Controller
 
         $title = 'Listado de Habitantes';
 
-        return view('query',compact('title','habitantes','noticias'));
+        return view('habitante.query',compact('title','habitantes','noticias'));
     }
 
     public function show(){
@@ -50,7 +50,7 @@ class HabitanteController extends Controller
 
         $habitante = Habitante::find($id);
 
-        return view('show',compact('habitante'));
+        return view('habitante.show',compact('habitante'));
 
 
     }
@@ -58,7 +58,7 @@ class HabitanteController extends Controller
 
     public function editar(Habitante $habitante){
 
-        return view('editar',['habitante'=>$habitante]);
+        return view('habitante.editar',['habitante'=>$habitante]);
     }
 
     public function update(Habitante $habitante){
@@ -99,7 +99,7 @@ class HabitanteController extends Controller
 
     public function create(){
 
-        return view('create');
+        return view('habitante.create');
     }
     public function store(){
 
@@ -132,27 +132,5 @@ class HabitanteController extends Controller
         ]);
         return redirect('admin');
     }
-    public function createnoticia(){
 
-        return view('createnoticia');
-    }
-    public function storenoticia(){
-
-        $data = request()->validate([
-            'titulo' => ['required'],
-            'descripcion' => ['required']
-        ], [
-            'titulo.required' => 'Se deben llenar todos los campos',
-            'descripcion.required' => 'Se deben llenar todos los campos'
-        ]);
-        //dd($data);
-        Noticia::create([
-            'titulo'=>$data['titulo'],
-            'descripcion'=>$data['descripcion']
-
-
-
-        ]);
-        return redirect('admin');
-    }
 }
