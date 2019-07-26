@@ -59,18 +59,16 @@ class HabitanteController extends Controller
 
         //dd('Actualizando');
         $data = request()->validate([
-            'telefono' => ['required','max:7','min:7'],
-            'celular' => ['required','min:10','max:10'],
+            'telefono' => ['required','regex:/^[0-9]{7}$/'],
+            'celular' => ['required','regex:/^(3)[0-9]{9}$/'],
             'contraseña' => ['min:5']
         ], [
             'telefono.required' => 'Se deben llenar todos los campos',
             'celular.required' => 'Se deben llenar todos los campos',
             'contraseña.min'=>'La contraseña debe tener mas de 5 caracteres',
             'idpropiedad.unique' => 'El campo idpropiedad debe ser único',
-            'celular.max' => 'El celular debe tener 10 numeros',
-            'celular.min' => 'El celular debe tener 10 numeros',
-            'telefono.max' => 'El campo telefono debe tener 7 numeros',
-            'telefono.max' => 'El campo telefono debe tener 7 numeros'
+            'celular.regex' => 'El celular debe tener 10 numeros',
+            'telefono.regex' => 'El campo telefono debe tener 7 numeros',
 
         ]);
 
@@ -99,8 +97,8 @@ class HabitanteController extends Controller
 
         $data = request()->validate([
             'idpropiedad' => ['required','unique:habitantes,idpropiedad'],
-            'telefono' => ['required','max:7','min:7'],
-            'celular' => ['required','min:10','max:10'],
+            'telefono' => ['required','regex:/^[0-9]{7}$/'],
+            'celular' => ['required','regex:/^(3)[0-9]{9}$/'],
             'contraseña' => ['required','min:5']
         ], [
             'idpropiedad.required' => 'Se deben llenar todos los campos',
@@ -109,10 +107,10 @@ class HabitanteController extends Controller
             'contraseña.required' => 'Se deben llenar todos los campos',
             'contraseña.min'=>'La contraseña debe tener mas de 5 caracteres',
             'idpropiedad.unique' => 'El campo idpropiedad debe ser único',
-            'celular.max' => 'El celular debe tener 10 numeros',
-            'celular.min' => 'El celular debe tener 10 numeros',
-            'telefono.max' => 'El campo telefono debe tener 7 numeros',
-            'telefono.max' => 'El campo telefono debe tener 7 numeros'
+            'celular.regex' => 'El celular debe tener 10 numeros',
+
+            'telefono.regex' => 'El campo telefono debe tener 7 numeros',
+
 
         ]);
         //dd($data);
