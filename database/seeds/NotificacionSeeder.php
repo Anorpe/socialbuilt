@@ -14,11 +14,24 @@ class NotificacionSeeder extends Seeder
     {
         Notificacion::create([
             'asunto'=>'Pago Administración',
-            'cuerpo'=>'Buenos Días, su apartamento tiene la administración vencida',
-            'remitenteisadmin'=>'TRUE',
+            'cuerpo'=>'Buenos Días, su apartamento tiene la administración vencida.',
+            'remitenteisadmin'=>true,
             'idpropiedad'=>'10104',
+        ]);
+
+        Notificacion::create([
+            'asunto'=>'Objeto Perdido',
+            'cuerpo'=>'Buenos Días, puede pasar a la administracion por la cedula de Rodolfo Aicardi.',
+            'remitenteisadmin'=>true,
+            'idpropiedad'=>'10104',
+        ]);
 
 
+        Notificacion::create([
+            'asunto'=>'Entrega de Pedido',
+            'cuerpo'=>'Se le informa que en la administración se le tiene un pedido el cual no le pudieron entregar.',
+            'remitenteisadmin'=>true,
+            'idpropiedad'=>'10104',
         ]);
         //
     }
