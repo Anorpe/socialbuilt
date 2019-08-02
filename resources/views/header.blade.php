@@ -36,7 +36,7 @@
                 <li class="dropdown"><a href="/admin/consultar">Consultar Perfil</a></li>
                 <li class="dropdown"><a href="/admin/nuevanoticia">Crear Noticia</a></li>
 
-                <li class="dropdown"><a href="/admin">Crear Notificación</a></li>
+                <li class="dropdown"><a href="/admin/nuevanotificacion">Crear Notificación</a></li>
               <li class="dropdown"><a href="/admin">Consultar Notificaciones</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->

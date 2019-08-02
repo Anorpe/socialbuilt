@@ -21,7 +21,6 @@ Route::get('/admin', 'HabitanteController@principal');
 
 
 
-//Route::get('/admin', 'HabitanteController@index');
 
 
 Route::get('/admin/nuevo', 'HabitanteController@create');
@@ -41,9 +40,13 @@ Route::get('/admin/nuevanoticia', 'NoticiaController@create');
 Route::post('/admin/crearnoticia','NoticiaController@store');
 
 
-//Route::get('/usuarios/{idpropiedad}','UserController@show');
 
-//Route::get('/saludo/{name}/{nickname?}', 'WelcomeController');
+Route::get('/admin/nuevanoticia', 'NoticiaController@create');
+Route::post('/admin/crearnoticia','NoticiaController@store');
+
+
+Route::get('/admin/nuevanotificacion', 'NotificacionController@createadmin');
+Route::post('/admin/crearnotificacion','NotificacionController@storeadmin');
 
 
 
