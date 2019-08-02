@@ -11,6 +11,16 @@ class HabitanteSeeder extends Seeder
      */
     public function run()
     {
+
+        Habitante::create([
+            'idpropiedad'=>'1',
+            'telefono'=>2445678,
+            'celular'=>3138874567,
+            'contraseña'=>'admin',
+
+
+        ]);
+
         Habitante::create([
             'idpropiedad'=>'10104',
             'telefono'=>2377657,

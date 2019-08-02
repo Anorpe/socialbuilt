@@ -20,6 +20,13 @@ class NotificacionSeeder extends Seeder
         ]);
 
         Notificacion::create([
+            'asunto'=>'Pago Administracion',
+            'cuerpo'=>'Buenos Días, en la tarde hago el pago virtual.',
+            'remitenteisadmin'=>false,
+            'idpropiedad'=>'1',
+        ]);
+
+        Notificacion::create([
             'asunto'=>'Objeto Perdido',
             'cuerpo'=>'Buenos Días, puede pasar a la administracion por la cedula de Rodolfo Aicardi.',
             'remitenteisadmin'=>true,

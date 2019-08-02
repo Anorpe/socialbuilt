@@ -12,6 +12,9 @@ class NoticiaController extends Controller
 
         return view('noticia.create');
     }
+
+
+
     public function store(){
 
         $data = request()->validate([

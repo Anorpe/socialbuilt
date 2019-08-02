@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 
@@ -6,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Crear Noticia') }}</div>
+                    <div class="card-header">{{ __('Notificaciones') }}</div>
 
                     <div class="card-body">
 
@@ -24,11 +25,11 @@
                             <div class="post-content">
                                 <div class="post-container">
                                     <div class="post-detail">
-                                        <h5>Asunto : {{$notificacion->asunto}} </h5>
+                                        <h5>Asunto : {{$notificacion->titulo}} </h5>
                                         <div class="line-divider"></div>
                                         <div class="post-text">
                                             <p>
-                                            <td>{{$noticia -> cuerpo}}</td>
+                                            <td>{{$notificacion -> cuerpo}}</td>
                                             </p>
                                         </div>
                                         <div class="line-divider"></div>
@@ -61,6 +62,8 @@
         </div>
     </div>
 @endsection
+
+
 
 
 

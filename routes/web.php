@@ -48,6 +48,8 @@ Route::post('/admin/crearnoticia','NoticiaController@store');
 Route::get('/admin/nuevanotificacion', 'NotificacionController@createadmin');
 Route::post('/admin/crearnotificacion','NotificacionController@storeadmin');
 
+Route::get('/admin/shownotificacion', 'NotificacionController@showadmin');
+
 
 
 Auth::routes();

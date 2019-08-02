@@ -11,7 +11,17 @@ class NotificacionController extends Controller
     //
     public function createadmin(){
 
+
+
         return view('notificacion.createadmin');
+    }
+
+
+
+    public function showadmin(){
+        $notificaciones = Notificacion::all()->where("remitenteisadmin","=",false);
+        #$notificaciones = Notificacion::all();
+        return view('notificacion.showadmin',compact('notificaciones'));
     }
     public function storeadmin(){
 
@@ -35,4 +45,11 @@ class NotificacionController extends Controller
         ]);
         return redirect('admin');
     }
+
+
+/*    public function showhabitante(){
+        $notificaciones = Notificacion::all()->where("remitenteisadmin","=",false)-where('idpropiedad',"=",);
+        #$notificaciones = Notificacion::all();
+        return view('notificacion.showadmin',compact('notificaciones'));
+    }*/
 }
