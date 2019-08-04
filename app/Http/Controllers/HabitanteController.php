@@ -5,19 +5,18 @@ namespace App\Http\Controllers;
 use App\Habitante;
 use App\Noticia;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class HabitanteController extends Controller
 {
     //
-    public function principal(){
+    use AuthenticatesUsers;
+    protected $loginView = 'habitante/CustomLogin';
 
+    public function principal(){
         $noticias = Noticia::all();
         return view('admin',compact('noticias'));
-
-
     }
-
-
 
     public function query(){
         $habitantes = Habitante::all();
@@ -61,23 +60,23 @@ class HabitanteController extends Controller
         $data = request()->validate([
             'telefono' => ['required','regex:/^[0-9]{7}$/'],
             'celular' => ['required','regex:/^(3)[0-9]{9}$/'],
-            'contraseña' => ['min:5']
+            'password' => ['min:5']
         ], [
             'telefono.required' => 'Se deben llenar todos los campos',
             'celular.required' => 'Se deben llenar todos los campos',
-            'contraseña.min'=>'La contraseña debe tener mas de 5 caracteres',
+            'password.min'=>'La contraseña debe tener mas de 5 caracteres',
             'idpropiedad.unique' => 'El campo idpropiedad debe ser único',
             'celular.regex' => 'El celular debe tener 10 numeros',
             'telefono.regex' => 'El campo telefono debe tener 7 numeros',
 
         ]);
 
-        if($data['contraseña'] != null){
-            $data['contraseña'] = bcrypt($data['contraseña']);
+        if($data['password'] != null){
+            $data['password'] = bcrypt($data['password']);
 
         }
         else{
-            unset($data['contraseña']);
+            unset($data['password']);
         }
 
         $habitante ->update($data);
@@ -99,13 +98,13 @@ class HabitanteController extends Controller
             'idpropiedad' => ['required','unique:habitantes,idpropiedad'],
             'telefono' => ['required','regex:/^[0-9]{7}$/'],
             'celular' => ['required','regex:/^(3)[0-9]{9}$/'],
-            'contraseña' => ['required','min:5']
+            'password' => ['required','min:5']
         ], [
             'idpropiedad.required' => 'Se deben llenar todos los campos',
             'telefono.required' => 'Se deben llenar todos los campos',
             'celular.required' => 'Se deben llenar todos los campos',
-            'contraseña.required' => 'Se deben llenar todos los campos',
-            'contraseña.min'=>'La contraseña debe tener mas de 5 caracteres',
+            'password.required' => 'Se deben llenar todos los campos',
+            'password.min'=>'La contraseña debe tener mas de 5 caracteres',
             'idpropiedad.unique' => 'El campo idpropiedad debe ser único',
             'celular.regex' => 'El celular debe tener 10 numeros',
 
@@ -118,7 +117,7 @@ class HabitanteController extends Controller
             'idpropiedad'=>$data['idpropiedad'],
             'telefono'=>$data['telefono'],
             'celular'=>$data['celular'],
-            'contraseña'=>bcrypt($data['contraseña']),
+            'password'=>bcrypt($data['password']),
 
 
         ]);

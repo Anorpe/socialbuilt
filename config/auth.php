@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'habitantes',
         'passwords' => 'users',
     ],
 
@@ -46,6 +46,10 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'habitantes' => [
+            'driver' => 'session',
+            'provider' => 'habitantes',
+        ],
     ],
 
     /*
@@ -75,6 +79,10 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+        'habitantes' =>[
+            'driver' => 'eloquent',
+            'model' => App\Habitante::class
+        ],
     ],
 
     /*

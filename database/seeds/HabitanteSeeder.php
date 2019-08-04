@@ -16,7 +16,7 @@ class HabitanteSeeder extends Seeder
             'idpropiedad'=>'1',
             'telefono'=>2445678,
             'celular'=>3138874567,
-            'contraseña'=>'admin',
+            'password'=>'admin',
 
 
         ]);
@@ -25,7 +25,7 @@ class HabitanteSeeder extends Seeder
             'idpropiedad'=>'10104',
             'telefono'=>2377657,
             'celular'=>3226567656,
-            'contraseña'=>'1234',
+            'password'=>'1234',
 
 
         ]);
@@ -33,7 +33,7 @@ class HabitanteSeeder extends Seeder
             'idpropiedad'=>'20101',
             'telefono'=>5814567,
             'celular'=>3125567898,
-            'contraseña'=>'1235',
+            'password'=>'1235',
 
 
         ]);
@@ -41,7 +41,7 @@ class HabitanteSeeder extends Seeder
             'idpropiedad'=>'10101',
             'telefono'=>4567896,
             'celular'=>3126678765,
-            'contraseña'=>'contra1234',
+            'password'=>'contra1234',
 
 
         ]);
@@ -57,7 +57,7 @@ class HabitanteSeeder extends Seeder
             'idpropiedad'=>'10111',
             'telefono'=>49908767,
             'celular'=>3225647654,
-            'contraseña'=>'mypass',
+            'password'=>'mypass',
 
 
         ]);

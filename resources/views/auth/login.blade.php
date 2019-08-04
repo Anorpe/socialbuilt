@@ -40,12 +40,12 @@
                             @csrf
     
                             <div class="form-group row">
-                                <label for="email" class="col-md-6 col-form-label text-md-right">{{ __('ID Propiedad') }}</label>
+                                <label for="idpropiedad" class="col-md-6 col-form-label text-md-right">{{ __('ID Propiedad') }}</label>
     
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <input id="idpropiedad" type="textbox" class="form-control @error('idpropiedad') is-invalid @enderror" name="idpropiedad" value="{{ old('idpropiedad') }}" required autocomplete="idpropiedad" autofocus>
     
-                                    @error('email')
+                                    @error('idpropiedad')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -69,7 +69,7 @@
     
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary btn-block">
                                         {{ __('Iniciar Sesión') }}
                                     </button>
                                     <h1> </h1>

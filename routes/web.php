@@ -54,4 +54,4 @@ Route::get('/admin/shownotificacion', 'NotificacionController@showadmin');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/login','HabitanteController@ShowLoginForm');

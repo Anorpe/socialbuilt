@@ -17,7 +17,7 @@ class CreateHabitantesTable extends Migration
             $table->bigInteger('idpropiedad')->primary();
             $table->bigInteger('telefono');
             $table->bigInteger('celular');
-            $table->string('contraseña');
+            $table->string('password');
             $table->timestamps();
         });
     }
