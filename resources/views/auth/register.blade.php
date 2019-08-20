@@ -11,31 +11,35 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
+
+
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('ID Propiedad') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="email" type="text" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="telefono" type="number" name="telefono" value="{{ old('telefono') }}" required autocomplete="telefono">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="celular" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="celular" type="number" name="celular" value="{{ old('celular') }}" required autocomplete="celular">
+
+
                             </div>
                         </div>
 

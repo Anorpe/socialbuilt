@@ -8,6 +8,6 @@ class Notificacion extends Model
 {
     //
     protected $table = 'notificacions';
-    protected $fillable = array('id', 'asunto', 'cuerpo','remitenteisadmin','idpropiedad');
+    protected $fillable = array('id', 'asunto', 'cuerpo','remitenteisadmin','email');
 
 }

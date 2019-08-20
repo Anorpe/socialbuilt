@@ -14,7 +14,7 @@
     <!--Favicon-->
     <link rel="shortcut icon" type="image/png" href="images/fav.png"/>
     </head>
-    
+
 @include('header')
 
   <body>
@@ -32,7 +32,7 @@
             <ul class="nav-news-feed">
               <li><i class="icon ion-ios-paper"></i><div>Mi perfil</div></li>
             </ul><!--news-feed links ends-->
-           
+
           </div>
     		<div class="col-md-7">
 
@@ -50,7 +50,7 @@
                                      </p>
                                  </div>
                           <div class="line-divider"></div>
-                                           
+
                 </div>
               </div>
             </div>
@@ -62,11 +62,11 @@
                                     <div class="line-divider"></div>
                                        <div class="post-text">
                                            <p>
-                                             
+
                                            </p>
                                        </div>
                                 <div class="line-divider"></div>
-                                                 
+
                       </div>
                     </div>
                   </div>
@@ -74,21 +74,7 @@
     		</div>
     	</div>
     </div>
-    <!--preloader-->
-    <div id="spinner-wrapper">
-      <div class="spinner"></div>
-    </div>
-    
-    <!-- Scripts
-    ================================================= -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMXfmDn0VlqWIyoOxK8997L-amWbUPiQ&callback=initMap"></script>
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.sticky-kit.min.js"></script>
-    <script src="js/jquery.scrollbar.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
-</html>
+
 
 
 

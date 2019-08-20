@@ -133,7 +133,7 @@
                                 @forelse ($habitantes as $habitante)
                                     <tr>
 
-                                        <td>{{$habitante->idpropiedad}}</td>
+                                        <td>{{$habitante->email}}</td>
                                         <td>{{$habitante -> telefono}}</td>
                                         <td>{{$habitante -> celular}}</td>
                                         <td><a href="/admin/editar/{{$habitante->idpropiedad}}">modificar</a></td>

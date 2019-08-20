@@ -28,7 +28,7 @@ class NotificacionController extends Controller
         $data = request()->validate([
             'asunto' => ['required'],
             'cuerpo' => ['required'],
-            'idpropiedad' => ['required'],
+            'email' => ['required'],
         ], [
             'titulo.required' => 'Se deben llenar todos los campos',
             'descripcion.required' => 'Se deben llenar todos los campos'
@@ -38,7 +38,7 @@ class NotificacionController extends Controller
             'asunto'=>$data['asunto'],
             'cuerpo'=>$data['cuerpo'],
             'remitenteisadmin'=>true,
-            'idpropiedad'=>$data['idpropiedad'],
+            'email'=>$data['email'],
 
 
 

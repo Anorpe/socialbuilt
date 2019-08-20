@@ -62,10 +62,10 @@
     </div>
     <br>
     <div class="form-group row">
-        <label for="contraseña" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
         <div class="col-md-6">
-            <input name="contraseña" id="contraseña" type="password" value="{{ old('password') }}" >
+            <input name="password" id="password" type="password" value="{{ old('password') }}" >
 
         </div>
     </div>

@@ -56,10 +56,10 @@
 
 
                             <div class="form-group row">
-                                <label for="idpropiedad" class="col-md-4 col-form-label text-md-right">{{ __('ID Propiedad') }}</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('ID Propiedad') }}</label>
 
                                 <div class="col-md-6">
-                                    <input name="idpropiedad" id="idpropiedad" type="text" value="{{ old('idpropiedad') }}" >
+                                    <input name="email" id="email" type="number" value="{{ old('email') }}" >
 
                                 </div>
                             </div>

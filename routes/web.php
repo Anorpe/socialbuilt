@@ -15,8 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
 
-Route::get('/admin', 'HabitanteController@principal');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', 'AdminController@principal');
 
 
 
@@ -50,8 +53,3 @@ Route::post('/admin/crearnotificacion','NotificacionController@storeadmin');
 
 Route::get('/admin/shownotificacion', 'NotificacionController@showadmin');
 
-
-
-Auth::routes();
-
-//Route::get('/login','HabitanteController@ShowLoginForm');

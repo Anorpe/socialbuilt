@@ -2,24 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Habitante;
 use App\Noticia;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Hash;
 
 class HabitanteController extends Controller
 {
     //
-    use AuthenticatesUsers;
-    protected $loginView = 'habitante/CustomLogin';
 
-    public function principal(){
-        $noticias = Noticia::all();
-        return view('admin',compact('noticias'));
-    }
+
 
     public function query(){
-        $habitantes = Habitante::all();
+        $habitantes = User::all();
         $noticias = Noticia::all();
 
         $title = 'Listado de Habitantes';
@@ -29,19 +25,19 @@ class HabitanteController extends Controller
 
     public function show(){
         $data = request()->validate([
-            'idpropiedad' => ['required','exists:habitantes'],
+            'idpropiedad' => ['required','exists:users'],
         ],[
             'idpropiedad.required' => 'Se deben llenar todos los campos'
             //'idpropiedad.exist'=>'“El ID propiedad no se encuentra en la base de datos”'
         ]);
-        $idpropiedad = $data['idpropiedad'];
-        return redirect ("admin/show/".$idpropiedad );
+        $email = $data['idpropiedad'];
+        return redirect ("admin/show/".$email );
     }
 
 
     public function mostrar($id){
 
-        $habitante = Habitante::find($id);
+        $habitante = User::all()->where('email','=',$id);
 
         return view('habitante.show',compact('habitante'));
 
@@ -72,7 +68,7 @@ class HabitanteController extends Controller
         ]);
 
         if($data['password'] != null){
-            $data['password'] = bcrypt($data['password']);
+            $data['password'] = Hash::make($data['password']);
 
         }
         else{
@@ -95,7 +91,7 @@ class HabitanteController extends Controller
     public function store(){
 
         $data = request()->validate([
-            'idpropiedad' => ['required','unique:habitantes,idpropiedad'],
+            'idpropiedad' => ['required','unique:users,email'],
             'telefono' => ['required','regex:/^[0-9]{7}$/'],
             'celular' => ['required','regex:/^(3)[0-9]{9}$/'],
             'password' => ['required','min:5']
@@ -113,11 +109,11 @@ class HabitanteController extends Controller
 
         ]);
         //dd($data);
-        Habitante::create([
-            'idpropiedad'=>$data['idpropiedad'],
+        User::create([
+            'email'=>$data['idpropiedad'],
             'telefono'=>$data['telefono'],
             'celular'=>$data['celular'],
-            'password'=>bcrypt($data['password']),
+            'password'=>Hash::make($data['password']),
 
 
         ]);

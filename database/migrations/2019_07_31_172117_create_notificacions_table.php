@@ -19,8 +19,8 @@ class CreateNotificacionsTable extends Migration
             $table->string('cuerpo');
             $table->timestamps();
             $table->boolean('remitenteisadmin');
-            $table->bigInteger('idpropiedad');
-            $table->foreign('idpropiedad')->references('idpropiedad')->on('habitantes');
+            $table->bigInteger('email');
+            $table->foreign('email')->references('email')->on('users');
         });
     }
 
