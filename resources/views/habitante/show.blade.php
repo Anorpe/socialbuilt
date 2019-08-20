@@ -87,10 +87,10 @@
                         <form method="POST" action="{{url('admin/show')}}">
                             @csrf
                             <div class="form-group row">
-                                <label for="idpropiedad" class="col-md-4 col-form-label text-md-right">{{ __('ID Propiedad') }}</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('ID Propiedad') }}</label>
 
                                 <div>
-                                    <input name="idpropiedad" id="idpropiedad" type="number" value="{{ old('idpropiedad') }}">
+                                    <input name="email" id="email" type="number" value="{{ old('email') }}">
                                     {{--            @if ($errors->has('name'))
                                                     <p>{{ $errors->first('name') }}</p>
                                                 @endif--}}

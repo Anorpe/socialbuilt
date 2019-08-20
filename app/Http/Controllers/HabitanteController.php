@@ -6,6 +6,7 @@ use App\Noticia;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class HabitanteController extends Controller
@@ -25,20 +26,20 @@ class HabitanteController extends Controller
 
     public function show(){
         $data = request()->validate([
-            'idpropiedad' => ['required','exists:users'],
+            'email' => ['required','exists:users'],
         ],[
-            'idpropiedad.required' => 'Se deben llenar todos los campos'
+            'email.required' => 'Se deben llenar todos los campos'
             //'idpropiedad.exist'=>'“El ID propiedad no se encuentra en la base de datos”'
         ]);
-        $email = $data['idpropiedad'];
+        $email = $data['email'];
         return redirect ("admin/show/".$email );
     }
 
 
-    public function mostrar($id){
+    public function mostrar($email){
 
-        $habitante = User::all()->where('email','=',$id);
-
+        $habitante = DB::table('users')->where('email', $email)->first();
+        //dd($habitante);
         return view('habitante.show',compact('habitante'));
 
 
