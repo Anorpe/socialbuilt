@@ -49,7 +49,7 @@ class HabitanteSeeder extends Seeder
             'idpropiedad'=>'10110',
             'telefono'=>3456756,
             'celular'=>3138877654,
-            'contraseña'=>'1234',
+            'password'=>'1234',
 
 
         ]);
