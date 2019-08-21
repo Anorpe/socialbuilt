@@ -39,7 +39,13 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+
                         @guest
+
+
+
+
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -49,9 +55,35 @@
                                 </li>
                             @endif
                         @else
+
+
+
+                            @if(Auth::user()->admin == True)
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav navbar-right main-menu">
+                                        <li class="dropdown"><a href="/admin/nuevo">Crear Perfil</a></li>
+                                        <li class="dropdown"><a href="/admin/consultar">Consultar Perfil</a></li>
+                                        <li class="dropdown"><a href="/admin/nuevanoticia">Crear Noticia</a></li>
+
+                                        <li class="dropdown"><a href="/admin/nuevanotificacion">Crear Notificación</a></li>
+                                        <li class="dropdown"><a href="/admin/shownotificacion">Consultar Notificaciones</a></li>
+                                    </ul>
+                                </div>
+
+                            @else
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav navbar-right main-menu">
+                                        <li class="dropdown"><a href="/admin/nuevo">Modificar Clave</a></li>
+                                        <li class="dropdown"><a href="/user/nuevanotificacion">Crear Notificación</a></li>
+                                        <li class="dropdown"><a href="/user/shownotificacion">Consultar Notificaciones</a></li>
+
+                                    </ul>
+                                </div>
+
+                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->email }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -67,6 +99,8 @@
                                 </div>
                             </li>
                         @endguest
+
+
                     </ul>
                 </div>
             </div>

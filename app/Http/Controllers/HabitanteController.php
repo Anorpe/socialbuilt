@@ -118,7 +118,7 @@ class HabitanteController extends Controller
 
 
         ]);
-        return redirect('admin');
+        return redirect('home');
     }
 
 }

@@ -21,6 +21,7 @@
                             @endif
 
                         </ul>
+                        <h5> Notificaciones del Administrador</h5>
                         @forelse ($notificaciones as $notificacion)
                             <div class="post-content">
                                 <div class="post-container">
@@ -32,11 +33,7 @@
                                             <td>{{$notificacion -> cuerpo}}</td>
                                             </p>
                                         </div>
-                                        <div class="post-text">
-                                            <p>
-                                            <td>{{$notificacion -> email}}</td>
-                                            </p>
-                                        </div>
+
                                         <div class="line-divider"></div>
 
                                     </div>
@@ -67,8 +64,6 @@
         </div>
     </div>
 @endsection
-
-
 
 
 

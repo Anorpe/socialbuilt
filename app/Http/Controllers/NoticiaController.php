@@ -32,6 +32,6 @@ class NoticiaController extends Controller
 
 
         ]);
-        return redirect('admin');
+        return redirect('home');
     }
 }

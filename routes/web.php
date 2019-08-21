@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -51,5 +51,10 @@ Route::post('/admin/crearnoticia','NoticiaController@store');
 Route::get('/admin/nuevanotificacion', 'NotificacionController@createadmin');
 Route::post('/admin/crearnotificacion','NotificacionController@storeadmin');
 
+Route::get('/user/nuevanotificacion', 'NotificacionController@createuser');
+Route::post('/user/crearnotificacion','NotificacionController@storeuser');
+
+
 Route::get('/admin/shownotificacion', 'NotificacionController@showadmin');
+Route::get('/user/shownotificacion', 'NotificacionController@showuser');
 

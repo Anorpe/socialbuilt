@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             'email'=>1,
             'telefono'=>2445678,
             'celular'=>3138874567,
+            'admin'=>true,
             'password'=>Hash::make('admin'),
 
 
@@ -27,6 +28,7 @@ class UserSeeder extends Seeder
             'email'=>10101,
             'telefono'=>2445678,
             'celular'=>3138874567,
+            'admin'=>false,
             'password'=>Hash::make('1234'),
 
 
@@ -36,6 +38,7 @@ class UserSeeder extends Seeder
             'email'=>10102,
             'telefono'=>2445678,
             'celular'=>3138874566,
+            'admin'=>false,
             'password'=>Hash::make('1234'),
 
 
@@ -45,7 +48,8 @@ class UserSeeder extends Seeder
             'email'=>10103,
             'telefono'=>2412378,
             'celular'=>3123454566,
-            'password'=>Hash::make('1234'),
+            'admin'=>false,
+            'password'=>Hash::make(1234),
 
 
         ]);

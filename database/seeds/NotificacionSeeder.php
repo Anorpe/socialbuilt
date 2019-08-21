@@ -23,7 +23,7 @@ class NotificacionSeeder extends Seeder
             'asunto'=>'Pago Administracion',
             'cuerpo'=>'Buenos Días, en la tarde hago el pago virtual.',
             'remitenteisadmin'=>false,
-            'email'=>1,
+            'email'=>10101,
         ]);
 
         Notificacion::create([
