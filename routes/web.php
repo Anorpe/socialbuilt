@@ -29,8 +29,11 @@ Route::get('/admin', 'AdminController@principal');
 Route::get('/admin/nuevo', 'HabitanteController@create');
 Route::post('/admin/crear','HabitanteController@store');
 
-Route::get('/admin/editar/{habitante}', 'HabitanteController@editar');
-Route::put('/admin/update/{habitante}','HabitanteController@update')->name('update');
+Route::get('/admin/editar/{user}', 'HabitanteController@editar');
+Route::put('/admin/update/{user}','HabitanteController@update')->name('update');
+
+Route::get('/user/editar', 'HabitanteController@editarclave');
+Route::put('/user/update/{user}','HabitanteController@updateclave')->name('updateclave');
 
 Route::get('/admin/consultar/','HabitanteController@query');
 Route::post('/admin/show','HabitanteController@show');

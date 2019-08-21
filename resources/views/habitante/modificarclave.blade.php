@@ -20,42 +20,11 @@
                             @endif
 
                         </ul>
-                        <form method="POST" action={{route('update',['user'=>$user])}}>
+                        <form method="POST" action={{route('updateclave',['user'=>$user])}}>
                             {{method_field('PUT')}}
                             @csrf
 
 
-                            <div class="form-group row">
-                                <label  class="col-md-4 col-form-label text-md-right">{{ $user->email }}</label>
-
-
-                            </div>
-
-
-
-
-                            <br>
-
-                            <div class="form-group row">
-                                <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
-
-                                <div class="col-md-6">
-                                    <input name="telefono" id="telefono" type="number" value="{{ old('telefono',$user->telefono) }}" >
-
-                                </div>
-                            </div>
-
-                            <br>
-
-                            <div class="form-group row">
-                                <label for="celular" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
-
-                                <div class="col-md-6">
-                                    <input name="celular" id="celular" type="number" value="{{ old('celular',$user->celular) }}" >
-
-                                </div>
-                            </div>
-                            <br>
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
@@ -69,7 +38,7 @@
                             <br>
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Editar') }}
+                                    {{ __('Modificar Clave de Acceso') }}
                                 </button>
 
 
@@ -82,6 +51,7 @@
         </div>
     </div>
 @endsection
+
 
 
 

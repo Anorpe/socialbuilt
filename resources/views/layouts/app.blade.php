@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" xmlns:.Auth="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -73,7 +73,7 @@
                             @else
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav navbar-right main-menu">
-                                        <li class="dropdown"><a href="/admin/nuevo">Modificar Clave</a></li>
+                                        <li class="dropdown"><a href="/user/editar">Modificar Clave</a></li>
                                         <li class="dropdown"><a href="/user/nuevanotificacion">Crear Notificación</a></li>
                                         <li class="dropdown"><a href="/user/shownotificacion">Consultar Notificaciones</a></li>
 

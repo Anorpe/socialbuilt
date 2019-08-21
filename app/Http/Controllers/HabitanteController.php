@@ -6,6 +6,7 @@ use App\Noticia;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -46,14 +47,13 @@ class HabitanteController extends Controller
     }
 
 
-    public function editar(Habitante $habitante){
+    public function editar(User $user){
 
-        return view('habitante.editar',['habitante'=>$habitante]);
+        return view('habitante.editar',['user'=>$user]);
     }
 
-    public function update(Habitante $habitante){
+    public function update(User $user){
 
-        //dd('Actualizando');
         $data = request()->validate([
             'telefono' => ['required','regex:/^[0-9]{7}$/'],
             'celular' => ['required','regex:/^(3)[0-9]{9}$/'],
@@ -62,7 +62,6 @@ class HabitanteController extends Controller
             'telefono.required' => 'Se deben llenar todos los campos',
             'celular.required' => 'Se deben llenar todos los campos',
             'password.min'=>'La contraseña debe tener mas de 5 caracteres',
-            'idpropiedad.unique' => 'El campo idpropiedad debe ser único',
             'celular.regex' => 'El celular debe tener 10 numeros',
             'telefono.regex' => 'El campo telefono debe tener 7 numeros',
 
@@ -76,7 +75,7 @@ class HabitanteController extends Controller
             unset($data['password']);
         }
 
-        $habitante ->update($data);
+        $user -> update($data);
 
 
 
@@ -84,6 +83,35 @@ class HabitanteController extends Controller
 
         return redirect('admin/consultar');
     }
+
+
+    public function editarclave(){
+        $user = Auth::user();
+
+        return view('habitante.modificarclave',['user'=>$user]);
+    }
+
+    public function updateclave(User $user){
+
+        $data = request()->validate([
+            'password' => ['min:5']
+        ], [
+            'password.min'=>'La contraseña debe tener mas de 5 caracteres',
+
+
+        ]);
+
+        $data['password'] = Hash::make($data['password']);
+
+        $user -> update($data);
+
+
+
+
+
+        return redirect('home');
+    }
+
 
     public function create(){
 
