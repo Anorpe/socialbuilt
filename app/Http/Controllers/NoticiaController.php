@@ -21,8 +21,8 @@ class NoticiaController extends Controller
             'titulo' => ['required'],
             'descripcion' => ['required']
         ], [
-            'titulo.required' => 'Se deben llenar todos los campos',
-            'descripcion.required' => 'Se deben llenar todos los campos'
+            'titulo.required' => 'Se debe llenar el campo título',
+            'descripcion.required' => 'Se debe llenar el campo descripción'
         ]);
         //dd($data);
         Noticia::create([

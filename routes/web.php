@@ -45,7 +45,7 @@ Route::get('/admin/show/{habitante}','HabitanteController@mostrar');
 Route::get('/admin/nuevanoticia', 'NoticiaController@create');
 Route::post('/admin/crearnoticia','NoticiaController@store');
 
-
+//Estas dos están repetidas?
 
 Route::get('/admin/nuevanoticia', 'NoticiaController@create');
 Route::post('/admin/crearnoticia','NoticiaController@store');

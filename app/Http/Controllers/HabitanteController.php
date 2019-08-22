@@ -29,7 +29,7 @@ class HabitanteController extends Controller
         $data = request()->validate([
             'email' => ['required','exists:users'],
         ],[
-            'email.required' => 'Se deben llenar todos los campos'
+            'email.required' => 'Se debe llenar el campo ID propiedad'
             //'idpropiedad.exist'=>'“El ID propiedad no se encuentra en la base de datos”'
         ]);
         $email = $data['email'];
@@ -59,11 +59,11 @@ class HabitanteController extends Controller
             'celular' => ['required','regex:/^(3)[0-9]{9}$/'],
             'password' => ['min:5']
         ], [
-            'telefono.required' => 'Se deben llenar todos los campos',
-            'celular.required' => 'Se deben llenar todos los campos',
-            'password.min'=>'La contraseña debe tener mas de 5 caracteres',
-            'celular.regex' => 'El celular debe tener 10 numeros',
-            'telefono.regex' => 'El campo telefono debe tener 7 numeros',
+            'telefono.required' => 'Se debe llenar el campo teléfono',
+            'celular.required' => 'Se debe llenar el campo celular',
+            'password.min'=>'La contraseña debe mínimo 5 caracteres',
+            'celular.regex' => 'El campo celular debe tener 10 dígitos exactamente y empezar por el número 3',
+            'telefono.regex' => 'El campo teléfono debe tener 7 dígitos exactamente',
 
         ]);
 
@@ -96,7 +96,7 @@ class HabitanteController extends Controller
         $data = request()->validate([
             'password' => ['min:5']
         ], [
-            'password.min'=>'La contraseña debe tener mas de 5 caracteres',
+            'password.min'=>'La contraseña debe tener mínimo 5 caracteres',
 
 
         ]);
@@ -125,15 +125,14 @@ class HabitanteController extends Controller
             'celular' => ['required','regex:/^(3)[0-9]{9}$/'],
             'password' => ['required','min:5']
         ], [
-            'idpropiedad.required' => 'Se deben llenar todos los campos',
-            'telefono.required' => 'Se deben llenar todos los campos',
-            'celular.required' => 'Se deben llenar todos los campos',
-            'password.required' => 'Se deben llenar todos los campos',
-            'password.min'=>'La contraseña debe tener mas de 5 caracteres',
+            'idpropiedad.required' => 'Se debe llenar el campo ID propiedad',
+            'telefono.required' => 'Se debe llenar el campo teléfono',
+            'celular.required' => 'Se debe llenar el campo celular',
+            'password.required' => 'Se debe llenar el campo password',
+            'password.min'=>'La contraseña debe tener mínimo 5 caracteres',
             'idpropiedad.unique' => 'El campo idpropiedad debe ser único',
-            'celular.regex' => 'El celular debe tener 10 numeros',
-
-            'telefono.regex' => 'El campo telefono debe tener 7 numeros',
+            'celular.regex' => 'El campo celular debe tener 10 dígitos exactamente y empezar por el número 3',
+            'telefono.regex' => 'El campo teléfono debe tener 7 dígitos exactamente',
 
 
         ]);
