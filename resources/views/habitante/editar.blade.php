@@ -19,6 +19,16 @@
                             @endif
 
                         </ul>
+                        <ul>
+                            @if ($errors->any())
+                                <div class ="alert alert-danger">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </div>
+                            @endif
+
+                        </ul>
                         <form method="POST" action={{route('update',['editado'=>$editado])}}>
 
                             {{method_field('PUT')}}

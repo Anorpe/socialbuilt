@@ -23,6 +23,16 @@
                                 <h1>Crear Usuario</h1>
                                 <div class="line-divider"></div>
                                 <div class="post-text">
+                                    <ul>
+                                        @if ($errors->any())
+                                            <div class ="alert alert-danger">
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </div>
+                                        @endif
+
+                                    </ul>
                                     <form method="POST" action="{{url('admin/crear')}}">
                                       @csrf
                                       <div class="form-group row">

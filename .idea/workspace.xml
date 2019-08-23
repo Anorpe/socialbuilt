@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8e1cc32b-e86a-483c-b28c-50f96de3f490" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotificacionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificacionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/habitante/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/habitante/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/habitante/editar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/habitante/editar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/habitante/modificarclave.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/habitante/modificarclave.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/habitante/query.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/habitante/query.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/habitante/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/habitante/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/noticia/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/noticia/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/notificacion/createadmin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/notificacion/createadmin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/notificacion/createuser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/notificacion/createuser.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +157,7 @@
       <workItem from="1566378396539" duration="5357000" />
       <workItem from="1566425850799" duration="757000" />
       <workItem from="1566427420012" duration="1639000" />
-      <workItem from="1566560792063" duration="10012000" />
+      <workItem from="1566560792063" duration="10525000" />
     </task>
     <servers />
   </component>

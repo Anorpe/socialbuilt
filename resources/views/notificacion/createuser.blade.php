@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-    
+
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
@@ -17,12 +17,22 @@
                         @endif
                         <div class="post-content">
                             <div class="post-container">
-    
+
                                 <div class="post-detail">
                                     <h1>Crear Notificación</h1>
                                     <div class="line-divider"></div>
                                     <div class="post-text">
-                                        
+                                        <ul>
+                                            @if ($errors->any())
+                                                <div class ="alert alert-danger">
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </div>
+                                            @endif
+
+                                        </ul>
+
                         <form method="POST" action="{{url('user/crearnotificacion')}}">
                             @csrf
                             <div class="form-group row">
