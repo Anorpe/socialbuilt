@@ -27,5 +27,11 @@ Configurar base de datos de la app con una local.
 
 
 
+
+
+
+
+
+
 Con estos pasos estaría lista la app para ser corrida en su servidor configurado.
 
