@@ -1,5 +1,5 @@
 @extends('layouts.home')
-
+@section('title','Principal')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -12,8 +12,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                        @forelse ($noticias as $noticia)
+                    @forelse ($noticias as $noticia)
                             <div class="post-content">
                                 <div class="post-container">
                                         <img src="images/post-images/noticia1.png" alt="user" class="profile-photo-md pull-left" />
@@ -51,8 +50,7 @@
 
                                     </div>
                                 </div>
-                            </div>
-                        @endforelse
+                         @endforelse  
                 </div>
             </div>
         </div>
