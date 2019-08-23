@@ -22,37 +22,26 @@
                                     <h1 align="center">Crear Noticia</h1>
                                     <div class="line-divider"></div>
                                     <div class="post-text">
-                                        
-
-
-
-
-<form method="POST" action="{{url('admin/crearnoticia')}}">
-    @csrf
-    
-
-    <div class="form-group row">
-        <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Titulo') }}</label>
-
-        <div>
-            <input name="Título" id="titulo"  class="form-control" type="text" value="{{ old('titulo') }}" >
-
-        </div>
-    </div>
-    <br>
-    <div class="form-group row">
-        <label for="Descripción" class="col-md-4 col-form-label text-md-right">{{ __('Descripcion') }}</label>
-        <div>
-            <textarea name="descripcion" id="descripcion" type="text" placeholder="{{ old('descripcion') }}" ></textarea>
-        </div>
-    </div>
-    <br>
-    <div class="col-md-8 offset-md-4">
-        <button type="submit" class="btn btn-primary">
-            {{ __('Publicar') }}
-        </button>
-
-
+                                        <form method="POST" action="{{url('admin/crearnoticia')}}">
+                                            @csrf
+                                            <div class="form-group row">
+                                                <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Titulo') }}</label>
+                                            <div>
+                                                <input name="Título" id="titulo"  class="form-control" type="text" value="{{ old('titulo') }}" >
+                                            </div>
+                                            </div>
+                                        <br>
+                                            <div class="form-group row">
+                                            <label for="Descripción" class="col-md-4 col-form-label text-md-right">{{ __('Descripcion') }}</label>
+                                                <div>
+                                                <input name="descripcion" id="descripcion" class="form-control" type="text" placeholder="{{ old('descripcion') }}" >
+                                                </div>
+                                                </div>
+                                                <br>
+                                            <div class="col-md-8 offset-md-4">
+                                                 <button type="submit" class="btn btn-primary">
+                                                    {{ __('Publicar') }}
+                                                </button>
     </div>
 </form>
                                     </div>
