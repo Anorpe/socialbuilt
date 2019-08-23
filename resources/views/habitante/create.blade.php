@@ -18,7 +18,7 @@
                     @endif
                     <div class="post-content">
                         <div class="post-container">
-                                
+
                             <div class="post-detail">
                                 <h6>Crear Usuario</h6>
                                 <div class="line-divider"></div>
@@ -26,64 +26,75 @@
                                     <form method="POST" action="{{url('admin/crear')}}">
 
                                       @csrf
-                                  
-                                  
+
+
                                       <div class="form-group row">
                                           <label for="idpropiedad" class="col-md-4 col-form-label text-md-right">{{ __('ID Propiedad') }}</label>
-                                  
+
                                           <div>
-                                              <input name="idpropiedad" id="idpropiedad" type="number" value="{{ old('idpropiedad') }}">
+                                              <input name="idpropiedad" id="idpropiedad"  class="form-control" type="number" value="{{ old('idpropiedad') }}">
                                   {{--            @if ($errors->has('name'))
                                                   <p>{{ $errors->first('name') }}</p>
                                               @endif--}}
                                           </div>
                                       </div>
-                                  
-                                  
-                                  
-                                  
+
+
+
+
                                       <br>
-                                  
+
                                       <div class="form-group row">
                                           <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
-                                  
+
                                           <div class="col-md-6">
-                                              <input name="telefono" id="telefono" type="number" value="{{ old('telefono') }}" >
-                                  
+                                              <input name="telefono" id="telefono"  class="form-control"  type="number" value="{{ old('telefono') }}" >
+
                                           </div>
                                       </div>
-                                  
+
                                       <br>
-                                  
+
                                       <div class="form-group row">
                                           <label for="celular" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
-                                  
+
                                           <div class="col-md-6">
-                                              <input name="celular" id="celular" type="number" value="{{ old('celular') }}" >
-                                  
+                                              <input name="celular" id="celular"  class="form-control" type="number" value="{{ old('celular') }}" >
+
                                           </div>
                                       </div>
                                       <br>
                                       <div class="form-group row">
                                           <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
-                                  
+
                                           <div class="col-md-6">
-                                              <input name="password" id="password" type="password" value="{{ old('password') }}" >
-                                  
+                                              <input name="password" id="password"  class="form-control" type="password" value="{{ old('password') }}" >
+
                                           </div>
                                       </div>
-                                  
-                                  
+
+                                        <div class="form-group row">
+                                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar Contraseña') }}</label>
+
+                                            <div class="col-md-6">
+                                                <input id="password-confirm" type="password" class="form-control" name="password-confirm" required autocomplete="new-password">
+                                            </div>
+                                        </div>
+
+
+                                        <br>
+
+
                                       <br>
                                       <div class="col-md-8 offset-md-4">
                                           <button type="submit" class="btn btn-primary">
                                               {{ __('Crear Perfil') }}
                                           </button>
-                                  
-                                  
+
+
                                       </div>
                                   </form>
-                                  
+
                                 </div>
                                 <div class="line-divider"></div>
 
@@ -91,7 +102,7 @@
 
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

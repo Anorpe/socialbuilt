@@ -29,7 +29,7 @@
                                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
                                 <div class="col-md-6">
-                                    <input name="password" id="password" type="password"  >
+                                    <input name="password"  class="form-control" id="password" type="password"  >
 
                                 </div>
                             </div>

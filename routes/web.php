@@ -32,25 +32,23 @@ Route::get('/admin', 'AdminController@principal');
 
 
 
-if(Auth::user() != null) {
-    if (Auth::user()->admin == true) {
-        Route::get('/admin/nuevo', 'HabitanteController@create');
-        Route::post('/admin/crear', 'HabitanteController@store');
 
-        Route::get('/admin/editar/{editado}', 'HabitanteController@editar');
-        Route::put('/admin/update/{editado}', 'HabitanteController@update')->name('update');
+Route::get('/admin/nuevo', 'HabitanteController@create');
+Route::post('/admin/crear', 'HabitanteController@store');
 
-        Route::get('/admin/consultar/', 'HabitanteController@query');
-        Route::post('/admin/show', 'HabitanteController@show');
-        Route::get('/admin/show/{habitante}', 'HabitanteController@mostrar');
+Route::get('/admin/editar/{editado}', 'HabitanteController@editar');
+Route::put('/admin/update/{editado}', 'HabitanteController@update')->name('update');
 
-        Route::get('/admin/nuevanoticia', 'NoticiaController@create');
-        Route::post('/admin/crearnoticia', 'NoticiaController@store');
+Route::get('/admin/consultar/', 'HabitanteController@query');
+Route::post('/admin/show', 'HabitanteController@show');
+Route::get('/admin/show/{habitante}', 'HabitanteController@mostrar');
 
-        Route::get('/admin/nuevanotificacion', 'NotificacionController@createadmin');
-        Route::post('/admin/crearnotificacion', 'NotificacionController@storeadmin');
-    }
-}
+Route::get('/admin/nuevanoticia', 'NoticiaController@create');
+Route::post('/admin/crearnoticia', 'NoticiaController@store');
+
+Route::get('/admin/nuevanotificacion', 'NotificacionController@createadmin');
+Route::post('/admin/crearnotificacion', 'NotificacionController@storeadmin');
+
 
 
 Route::get('/user/editar', 'HabitanteController@editarclave');
