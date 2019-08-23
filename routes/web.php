@@ -11,6 +11,7 @@
 |
 */
 
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -33,7 +34,8 @@ Route::get('/admin', 'AdminController@principal');
 
 
 
-Route::get('/admin/nuevo', 'HabitanteController@create');
+
+Route::get('/admin/nuevo','HabitanteController@create');
 Route::post('/admin/crear', 'HabitanteController@store');
 
 Route::get('/admin/editar/{editado}', 'HabitanteController@editar');

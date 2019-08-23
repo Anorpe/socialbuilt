@@ -88,9 +88,5 @@ class NotificacionController extends Controller
     }
 
 
-    /*    public function showhabitante(){
-            $notificaciones = Notificacion::all()->where("remitenteisadmin","=",false)-where('idpropiedad',"=",);
-            #$notificaciones = Notificacion::all();
-            return view('notificacion.showadmin',compact('notificaciones'));
-        }*/
+
 }
