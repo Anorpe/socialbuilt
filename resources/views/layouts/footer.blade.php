@@ -7,25 +7,25 @@
                   <div class="col-md-2 col-sm-2">
                     <h6>Andrés Orrego</h6>
                     <ul class="footer-links">
-                      <li><a href="">Aorrego@unal.edu.co</a></li>
+                      <li><a >Aorrego@unal.edu.co</a></li>
                     </ul>
                   </div>
                   <div class="col-md-2 col-sm-2">
                     <h6>Alex santiago Contreras</h6>
                     <ul class="footer-links">
-                      <li><a href="">Acontrerash@unal.edu.co</a></li>
+                      <li><a >Acontrerash@unal.edu.co</a></li>
                     </ul>
                   </div>
                   <div class="col-md-3 col-sm-3">
                     <h6>Sebastián González Jiménez</h6>
                     <ul class="footer-links">
-                      <li><a href="">Sgonzalezj@unal.edu.co</a></li>
+                      <li><a >Sgonzalezj@unal.edu.co</a></li>
                     </ul>
                   </div>
                   <div class="col-md-3 col-sm-3">
-                    <h6>Pablo</h6>
-                      <ul class="contact">
-                          <li><a href="">Correo</a></li>
+                    <h6>Pablo Andres Castrillon</h6>
+                      <ul class="footer-links">
+                          <li><a >pacastrillon@unal.edu.co</a></li>
                       </ul>
                   </div>
                 </div>
@@ -36,7 +36,7 @@
           <div id="spinner-wrapper">
             <div class="spinner"></div>
           </div>
-          
+
           <!-- Scripts
           ================================================= -->
           @yield('scripts')
@@ -48,4 +48,3 @@
           <script src="{{asset('js/script.js')}}"></script>
         </body>
       </html>
-      
