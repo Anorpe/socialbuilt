@@ -19,7 +19,7 @@
                             <div class="post-container">
     
                                 <div class="post-detail">
-                                    <h1>Crear Noticia</h1>
+                                    <h1 align="center">Crear Noticia</h1>
                                     <div class="line-divider"></div>
                                     <div class="post-text">
                                         
