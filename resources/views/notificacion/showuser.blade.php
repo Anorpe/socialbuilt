@@ -1,30 +1,24 @@
-
-@extends('layouts.app')
-
-
+@extends('layouts.home')
+@section('title','Principal')
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Notificaciones') }}</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
 
-                    <div class="card-body">
-
-                        <ul>
-                            @if ($errors->any())
-                                <div class ="alert alert-danger">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </div>
-                            @endif
-
-                        </ul>
-                        <h5> Notificaciones del Administrador</h5>
-                        @forelse ($notificaciones as $notificacion)
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @forelse ($notificaciones as $notificacion)
                             <div class="post-content">
+                                    
                                 <div class="post-container">
+                                        <h1 align="center">Notificación</h1>
+                                        <div class="line-divider"></div>
+                                        <img src="{{asset('images/post-images/notificacion.jpg')}}" alt="user" class="profile-photo-md pull-left" />     
                                     <div class="post-detail">
                                         <h5>Asunto : {{$notificacion->asunto}} </h5>
                                         <div class="line-divider"></div>
@@ -56,14 +50,9 @@
                                 </div>
                             </div>
                         @endforelse
-
-
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection
-
-
-
