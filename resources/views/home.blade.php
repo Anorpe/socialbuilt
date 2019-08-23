@@ -18,15 +18,18 @@
                                         <img src="images/post-images/noticia1.png" alt="user" class="profile-photo-md pull-left" />
                                     <div class="post-detail">
                                         <h5>{{$noticia->titulo}} </h5>
+                                        <p>
+                                        <td><h10>{{$noticia -> created_at}}</h10></td>
+                                        </p>
                                         <div class="line-divider"></div>
                                         <div class="post-text">
-                                            <p>
-                                            <td>{{$noticia -> created_at}}</td>
-                                            </p>
+
                                         </div>
-                                        <div class="line-divider"></div>
+
                                         <div class="post-text">
                                             <p>
+                                            <h5>Descripción: </h5>
+
                                             <td>{{$noticia -> descripcion}}</td>
                                             </p>
                                         </div>
@@ -50,7 +53,7 @@
 
                                     </div>
                                 </div>
-                         @endforelse  
+                         @endforelse
                 </div>
             </div>
         </div>
