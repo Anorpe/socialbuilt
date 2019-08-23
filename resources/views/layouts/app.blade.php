@@ -65,21 +65,22 @@
                 <li class="dropdown"><a href="/user/shownotificacion">Consultar Notificaciones</a></li>
 				
 			@endif
-				<li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->email }} <span class="caret"></span>
-                </a>
+            <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->email }} <span class="caret"></span>
+                    </a>
 
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                            {{ __('Salir') }}
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-                </div>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
                 </li>
 			@endguest	
             </ul>
@@ -94,17 +95,23 @@
           ================================================= -->
     		<div class="col-md-3 static">
             <div class="profile-card">
-            	<img src="images/users/user-1.jpg" alt="user" class="profile-photo" />
-            	<h5><a href="timeline.html" class="text-white">Sarah Cruiz</a></h5>
-            	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+                <img src="images/users/user-1.jpg" alt="user" class="profile-photo" />
+                <h5><a  class="text-white">Usuario :</a></h5>
+            	<h5><a  class="text-white">{{ Auth::user()->email }}</a></h5>
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
-              <li><i class="icon ion-ios-paper"></i><div><a href="newsfeed.html">My Newsfeed</a></div></li>
-              <li><i class="icon ion-ios-people"></i><div><a href="newsfeed-people-nearby.html">People Nearby</a></div></li>
-              <li><i class="icon ion-ios-people-outline"></i><div><a href="newsfeed-friends.html">Friends</a></div></li>
-              <li><i class="icon ion-chatboxes"></i><div><a href="newsfeed-messages.html">Messages</a></div></li>
-              <li><i class="icon ion-images"></i><div><a href="newsfeed-images.html">Images</a></div></li>
-              <li><i class="icon ion-ios-videocam"></i><div><a href="newsfeed-videos.html">Videos</a></div></li>
+                    @if(Auth::user()->admin == True)
+                    <li><i class="icon ion-ios-paper"></i><div><a href="/admin/nuevo">Crear Perfil</a></div></li>
+                    <li><i class="icon ion-ios-people"></i><div><a href="/admin/consultar">Consultar Perfil</a></div></li>
+                    <li><i class="icon ion-ios-people-outline"></i><div><a href="/admin/nuevanoticia">Crear Noticia</a></div></li>
+                    <li><i class="icon ion-chatboxes"></i><div><a href="/admin/nuevanotificacion">Crear Notificación</a></div></li>
+                    <li><i class="icon ion-chatboxes"></i><div><a href="/admin/shownotificacion">Consultar Notificaciones</a></div></li>
+                
+                @else
+                <li><i class="icon ion-ios-people-outline"></i><div><a href="/user/editar">Modificar Clave</a></div></li>
+                <li><i class="icon ion-chatboxes"></i><div><a href="/user/nuevanotificacion">Crear Notificación</a></div></li>
+                <li><i class="icon ion-chatboxes"></i><div><a href="/user/shownotificacion">Consultar Notificaciones</a></div></li>
+                @endif
             </ul><!--news-feed links ends-->  
           </div>
 
