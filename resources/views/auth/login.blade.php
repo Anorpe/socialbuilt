@@ -19,9 +19,9 @@
     <!--Favicon-->
     <link rel="shortcut icon" type="image/png" href="images/fav.png"/>
 	</head>
-	<body>
+	<br>
 
-    
+
 
     <!-- Top Banner
     ================================================= -->
@@ -57,11 +57,46 @@
                                 {{ __('Iniciar Sesión') }}
                             </button>
 						</form>
-						
+
 					</div>
 				</div><!-- Sign Up Form End -->
 			</div>
 		</section>
+    <br></br>
+    <br></br>
+    <br></br>
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-wrapper">
+                    <div class="col-md-2 col-sm-2">
+                        <h6>Andrés Orrego</h6>
+                        <ul class="footer-links">
+                            <li><a >Aorrego@unal.edu.co</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <h6>Alex santiago Contreras</h6>
+                        <ul class="footer-links">
+                            <li><a >Acontrerash@unal.edu.co</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <h6>Sebastián González Jiménez</h6>
+                        <ul class="footer-links">
+                            <li><a >Sgonzalezj@unal.edu.co</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <h6>Pablo Andres Castrillon</h6>
+                        <ul class="footer-links">
+                            <li><a >pacastrillon@unal.edu.co</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!--preloader-->
     <div id="spinner-wrapper">
       <div class="spinner"></div>
@@ -74,6 +109,6 @@
     <script src="js/jquery.appear.min.js"></script>
 		<script src="js/jquery.incremental-counter.js"></script>
     <script src="js/script.js"></script>
-    
+
 	</body>
 </html>
