@@ -65,12 +65,39 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $data = request()->validate([
+            'idpropiedad' => ['required','unique:users,email'],
+            'telefono' => ['required','regex:/^[0-9]{7}$/'],
+            'celular' => ['required','regex:/^(3)[0-9]{9}$/'],
+            'password' => ['required','min:5'],
+        ], [
+            'idpropiedad.required' => 'Se debe llenar el campo ID propiedad',
+            'telefono.required' => 'Se debe llenar el campo teléfono',
+            'celular.required' => 'Se debe llenar el campo celular',
+            'password.required' => 'Se debe llenar el campo password',
+            'password.min'=>'La contraseña debe tener mínimo 5 caracteres',
+            'idpropiedad.unique' => 'El campo idpropiedad debe ser único',
+            'celular.regex' => 'El campo celular debe tener 10 dígitos exactamente y empezar por el número 3',
+            'telefono.regex' => 'El campo teléfono debe tener 7 dígitos exactamente',
 
-            'email' => $data['email'],
-            'telefono'=> $data['telefono'],
-            'celular'=> $data['celular'],
-            'password' => Hash::make($data['password']),
+
         ]);
+        //dd($data);
+        if($data['password'] != $data['password-confirm']){
+            $error = \Illuminate\Validation\ValidationException::withMessages([
+                'field_name_1' => ['Validation Message #1'],
+                'field_name_2' => ['Validation Message #2'],
+            ]);
+            throw $error;
+        }
+        User::create([
+            'email'=>$data['idpropiedad'],
+            'telefono'=>$data['telefono'],
+            'celular'=>$data['celular'],
+            'password'=>Hash::make($data['password']),
+
+
+        ]);
+        return redirect('home');
     }
 }

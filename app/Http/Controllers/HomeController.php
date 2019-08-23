@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $noticias = Noticia::all();
+        $noticias = Noticia::orderBy('created_at', 'DESC')->get();
         return view('home',compact('noticias'));
 
     }

@@ -22,6 +22,12 @@
                                         <div class="line-divider"></div>
                                         <div class="post-text">
                                             <p>
+                                            <td>{{$noticia -> created_at}}</td>
+                                            </p>
+                                        </div>
+                                        <div class="line-divider"></div>
+                                        <div class="post-text">
+                                            <p>
                                             <td>{{$noticia -> descripcion}}</td>
                                             </p>
                                         </div>

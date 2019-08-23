@@ -20,13 +20,14 @@
                             @endif
 
                         </ul>
-                        <form method="POST" action={{route('update',['user'=>$user])}}>
+                        <form method="POST" action={{route('update',['editado'=>$editado])}}>
+
                             {{method_field('PUT')}}
                             @csrf
 
 
                             <div class="form-group row">
-                                <label  class="col-md-4 col-form-label text-md-right">{{ $user->email }}</label>
+                                <label  class="col-md-4 col-form-label text-md-right">{{ $editado->email }}</label>
 
 
                             </div>
@@ -40,7 +41,7 @@
                                 <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
 
                                 <div class="col-md-6">
-                                    <input name="telefono" id="telefono" type="number" value="{{ old('telefono',$user->telefono) }}" >
+                                    <input name="telefono" id="telefono" type="number" value="{{ old('telefono',$editado->telefono) }}" >
 
                                 </div>
                             </div>
@@ -51,7 +52,7 @@
                                 <label for="celular" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
 
                                 <div class="col-md-6">
-                                    <input name="celular" id="celular" type="number" value="{{ old('celular',$user->celular) }}" >
+                                    <input name="celular" id="celular" type="number" value="{{ old('celular',$editado->celular) }}" >
 
                                 </div>
                             </div>

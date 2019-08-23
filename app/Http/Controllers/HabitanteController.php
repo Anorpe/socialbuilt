@@ -17,6 +17,7 @@ class HabitanteController extends Controller
 
 
     public function query(){
+
         $habitantes = User::all();
         $noticias = Noticia::all();
 
@@ -47,12 +48,12 @@ class HabitanteController extends Controller
     }
 
 
-    public function editar(User $user){
+    public function editar(User $editado){
 
-        return view('habitante.editar',['user'=>$user]);
+        return view('habitante.editar',['editado'=>$editado]);
     }
 
-    public function update(User $user){
+    public function update(User $editado){
 
         $data = request()->validate([
             'telefono' => ['required','regex:/^[0-9]{7}$/'],
@@ -75,7 +76,7 @@ class HabitanteController extends Controller
             unset($data['password']);
         }
 
-        $user -> update($data);
+        $editado -> update($data);
 
 
 
@@ -94,12 +95,20 @@ class HabitanteController extends Controller
     public function updateclave(User $user){
 
         $data = request()->validate([
-            'password' => ['min:5']
+            'password' => ['required','min:5'],
+            'password-confirm'=>['required']
         ], [
             'password.min'=>'La contraseña debe tener mínimo 5 caracteres',
 
 
         ]);
+        if($data['password'] != $data['password-confirm']){
+            $error = \Illuminate\Validation\ValidationException::withMessages([
+                'contraseña' => ['Las contraseñas no coinciden'],
+
+            ]);
+            throw $error;
+        }
 
         $data['password'] = Hash::make($data['password']);
 
@@ -114,8 +123,15 @@ class HabitanteController extends Controller
 
 
     public function create(){
+        if(Auth::user()->admin == true){
+            return view('habitante.create');
 
-        return view('habitante.create');
+        }
+
+        return redirect('home');
+
+
+
     }
     public function store(){
 
@@ -123,7 +139,8 @@ class HabitanteController extends Controller
             'idpropiedad' => ['required','unique:users,email'],
             'telefono' => ['required','regex:/^[0-9]{7}$/'],
             'celular' => ['required','regex:/^(3)[0-9]{9}$/'],
-            'password' => ['required','min:5']
+            'password' => ['required','min:5'],
+            'password-confirm'=>['required'],
         ], [
             'idpropiedad.required' => 'Se debe llenar el campo ID propiedad',
             'telefono.required' => 'Se debe llenar el campo teléfono',
@@ -137,6 +154,13 @@ class HabitanteController extends Controller
 
         ]);
         //dd($data);
+        if($data['password'] != $data['password-confirm']){
+            $error = \Illuminate\Validation\ValidationException::withMessages([
+                'contraseña' => ['Las contraseñas no coinciden'],
+
+            ]);
+            throw $error;
+        }
         User::create([
             'email'=>$data['idpropiedad'],
             'telefono'=>$data['telefono'],
