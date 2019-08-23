@@ -12,8 +12,9 @@
     ================================================= -->
 		<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
 		<link rel="stylesheet" href="{{asset('css/style.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" />
+        <link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}" />
+        <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" />
+        @yield('stylessheets')
   
     <!--Google Webfont-->
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700' rel='stylesheet' type='text/css'>

@@ -39,6 +39,7 @@
           
           <!-- Scripts
           ================================================= -->
+          @yield('scripts')
           <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMXfmDn0VlqWIyoOxK8997L-amWbUPiQ&callback=initMap"></script>
           <script src="{{asset('js/jquery-3.1.1.min.js')}}"></script>
           <script src="{{asset('js/bootstrap.min.js')}}"></script>
