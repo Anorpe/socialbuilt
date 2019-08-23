@@ -15,9 +15,11 @@
 
                         @forelse ($noticias as $noticia)
                             <div class="post-content">
+                                    <img src="images/post-images/noticia1.jpg" alt="post-image" class="" />
                                 <div class="post-container">
+                                        <img src="images/post-images/noticia.png" alt="user" class="profile-photo-md pull-left" />
                                     <div class="post-detail">
-                                        <h5>Noticia : {{$noticia->titulo}} </h5>
+                                        <h5>{{$noticia->titulo}} </h5>
                                         <div class="line-divider"></div>
                                         <div class="post-text">
                                             <p>

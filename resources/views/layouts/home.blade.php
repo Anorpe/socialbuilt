@@ -6,7 +6,7 @@
           ================================================= -->
     		<div class="col-md-3 static">
             <div class="profile-card">
-                <img src="images/users/user-1.jpg" alt="user" class="profile-photo" />
+                <img src="images/users/principal.png" alt="user" class="profile-photo" />
                 <h5><a  class="text-white">Usuario :</a></h5>
             	<h5><a  class="text-white">{{ Auth::user()->email }}</a></h5>
             </div><!--profile card ends-->
